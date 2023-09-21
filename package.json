@@ -4,7 +4,12 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@angular/animations": "^16.2.6",
+    "@angular/cdk": "^16.2.5",
+    "@angular/material": "^16.2.5",
+    "@nx/angular": "^16.8.1"
+  },
   "devDependencies": {
     "@nx/js": "16.8.1",
     "@nx/workspace": "16.8.1",
