@@ -7,12 +7,12 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/host",
         "index": "host/src/index.html",
-        "main": "host/src/bootstrap.ts",
+        "main": "host/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "host/tsconfig.app.json",
         "assets": ["host/src/favicon.ico", "host/src/assets"],
