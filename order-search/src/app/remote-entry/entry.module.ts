@@ -8,11 +8,15 @@ import { MaterialModule } from '@omx-tools/material';
 import { SearchComponent } from '../search/search.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgIf, JsonPipe} from '@angular/common';
+import { ServicesModule } from '@omx-tools/services';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [RemoteEntryComponent, SearchComponent],
   imports: [CommonModule, RouterModule.forChild(remoteRoutes),
-    MaterialModule,ReactiveFormsModule,FormsModule,NgIf,JsonPipe],
+    MaterialModule,ReactiveFormsModule,FormsModule,NgIf,JsonPipe, ServicesModule,HttpClientModule,BrowserAnimationsModule],
   providers: [],
 })
 export class RemoteEntryModule {}

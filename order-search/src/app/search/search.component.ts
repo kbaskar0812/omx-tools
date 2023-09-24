@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
+import { ServicesModule } from '@omx-tools/services';
 
 
 
@@ -11,12 +12,22 @@ import { FormBuilder, FormControl } from '@angular/forms';
 })
 export class SearchComponent {
   private fb = inject(FormBuilder);
+  editdata:any;
+  constructor(private service: ServicesModule)
+  {
+
+  }
+
   searchForm = this.fb.group({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
 
-  onSubmit(): void {
-    alert('Thanks!');
+
+
+  onSubmit() {
+    this.service.orderSearch(this.searchForm.value).subscribe(res => {
+      this.editdata = res;
+    });
   }
 }
