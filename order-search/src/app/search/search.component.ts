@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { ServicesModule } from '@omx-tools/services';
-
 
 
 
@@ -12,7 +12,13 @@ import { ServicesModule } from '@omx-tools/services';
 })
 export class SearchComponent {
   private fb = inject(FormBuilder);
-  editdata:any;
+  orderData:any;
+
+  public dataSource = new MatTableDataSource<any>([]);
+  displayedColumns = ["monthYear", "result"];
+  displayedColumns2=['service','count']
+  displayedColumns3=['result']
+
   constructor(private service: ServicesModule)
   {
 
@@ -27,7 +33,14 @@ export class SearchComponent {
 
   onSubmit() {
     this.service.orderSearch(this.searchForm.value).subscribe(res => {
-      this.editdata = res;
+      this.orderData = res;
+      this.dataSource = this.orderData;
     });
+  }
+
+  getdata(data: any[])
+  {
+    console.log(data)
+    return new MatTableDataSource<any>(data);
   }
 }
