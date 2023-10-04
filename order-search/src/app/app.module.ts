@@ -19,7 +19,7 @@ BrowserModule,BrowserAnimationsModule,
         },
       ],
       { initialNavigation: 'enabledBlocking' }
-    ), 
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],

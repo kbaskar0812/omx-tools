@@ -9,10 +9,11 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgIf, JsonPipe} from '@angular/common';
 import { ServicesModule } from '@omx-tools/services';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphComponent } from '../graph/graph.component';
 
 
 @NgModule({
-  declarations: [RemoteEntryComponent, SearchComponent],
+  declarations: [RemoteEntryComponent, SearchComponent,GraphComponent],
   imports: [CommonModule, RouterModule.forChild(remoteRoutes),
     MaterialModule,ReactiveFormsModule,FormsModule,NgIf,
     JsonPipe, ServicesModule, HttpClientModule],
